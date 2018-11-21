@@ -1,0 +1,26 @@
+<h1>PO Item</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!poitems"><em>Loading...</em></p>
+
+<table class='table' *ngIf="poitems">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>Quantity</th>
+      <th>Description</th>
+      <th>Status</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of poitems" [routerLink]="['../poitemdetail', data.orderItemId]">
+      <td>{{ data.partNo }}</td>
+      <td>{{ data.qtyOrder }}/{{ data.qtyAvailable }}</td>
+      <td>{{ data.partDescription }}</td>
+      <td>{{ data.itemStatus }}</td>
+      <td>{{ data.lastUpdatedDate }}</td>
+    </tr>
+  </tbody>
+</table>

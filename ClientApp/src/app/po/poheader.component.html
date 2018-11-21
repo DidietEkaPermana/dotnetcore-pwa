@@ -1,0 +1,27 @@
+<h1>PO Header</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!poheaders"><em>Loading...</em></p>
+
+<table class='table' *ngIf="poheaders">
+  <thead>
+    <tr>
+      <th>#</th>
+      <th>#Order</th>
+      <th>Order Date</th>
+      <th>ETA</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of poheaders" 
+     [routerLink]="['poitem', data.orderId]">
+      <td>{{ data.ponumber }}</td>
+      <td>{{ data.orderNumber }}</td>
+      <td>{{ data.orderDate }}</td>
+      <td>{{ data.eta }}</td>
+      <td>{{ data.lastUpdatedDate }}</td>
+    </tr>
+  </tbody>
+</table>

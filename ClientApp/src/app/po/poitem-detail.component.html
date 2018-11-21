@@ -1,0 +1,26 @@
+<h1>PO Item Detail</h1>
+
+<p>This component demonstrates fetching data from the server.</p>
+
+<p *ngIf="!poitemdetails"><em>Loading...</em></p>
+
+<table class='table' *ngIf="poitemdetails">
+  <thead>
+    <tr>
+      <th>Branch</th>
+      <th>Quantity</th>
+      <th>Status</th>
+      <th>ETA</th>
+      <th>Last Update</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr *ngFor="let data of poitemdetails">
+      <td>{{ data.branch }}</td>
+      <td>{{ data.qtyAvailable }}</td>
+      <td>{{ data.itemDetailStatus }}</td>
+      <td>{{ data.etadate }}</td>
+      <td>{{ data.lastUpdatedDate }}</td>
+    </tr>
+  </tbody>
+</table>
