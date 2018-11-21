@@ -1,7 +1,5 @@
-Server=tcp:utsqlserver.database.windows.net,1433;Initial Catalog=UTLogDb;Persist Security Info=False;User ID=unitedtractorapp;Password=P@ssw0rd12345;MultipleActiveResultSets=False;Encrypt=True;TrustServerCertificate=False;Connection Timeout=30;
-
-
-Scaffold-DbContext "Server=tcp:utsqlserver.database.windows.net,1433;Initial Catalog=UTLogDb;Persist Security Info=False;User ID=unitedtractorapp;Password=P@ssw0rd12345;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
+create model from already existed db
+Scaffold-DbContext "Server=tcp:sqlserver.database.windows.net,1433;Initial Catalog=xxx;Persist Security Info=False;User ID=xxx;Password=xxx;" Microsoft.EntityFrameworkCore.SqlServer -OutputDir Models
 
 
 dotnet tool install -g dotnet-aspnet-codegenerator
